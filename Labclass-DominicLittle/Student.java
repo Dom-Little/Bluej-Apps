@@ -3,7 +3,8 @@
  * The Student class represents a student in a student administration system.
  * It holds the student details relevant in our context.
  * 
- * @author Michael Kölling and David Barnes
+ * @author Dominic Little
+ * 
  * @version 2011.07.31
  */
 public class Student extends Course
