@@ -185,7 +185,7 @@ public class TicketMachine
     {
         System.out.println();
         System.out.println(" ##############################");
-        System.out.println(" #      Peacock Trains");
+        System.out.println(" #      Burnley Trains");
         System.out.println(" # Train Tickets - PAY HERE");
         System.out.println(" ##############################");
         System.out.println();

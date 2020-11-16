@@ -2,19 +2,15 @@ import java.util.Date;
 import java.time.LocalDateTime;
 
 /**
- * Write a description of class Ticket here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Dominic Little)
+ * @version 10/11/2020
  */
-
-    
 
 public class Ticket
 {
 private int price;
     private String destination;
-    private Date currentDate = new Date();
+    
     private LocalDateTime date = LocalDateTime.now();
     private Date today = new Date();
     
