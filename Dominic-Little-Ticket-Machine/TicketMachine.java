@@ -1,4 +1,9 @@
+
+import java.io.*;
+import java.util.Scanner;
+import java.text.SimpleDateFormat;
 /**
+ * 
  * TicketMachine models a ticket machine that issues
  * flat-fare tickets.
  * The price of a ticket is specified via the constructor.
@@ -6,44 +11,83 @@
  * sensible amounts of money, and will only print a ticket
  * if enough money has been input.
  * 
- * @author David J. Barnes and Michael Kölling
- * @version 2011.07.31
+ * @author Dominic Little
+ * @version 10/11/2020
  */
-public class TicketMachine extends Coin
+public class TicketMachine
 {
-    // The price of fixed tickets from this machine.
-    public static final Ticket AYLESBURY_TICKET = new Ticket("Aylesbury",220);
-    public static final Ticket AMERSHAM_TICKET = new Ticket("Amersham",300);
-    public static final Ticket WYCOMBE_TICKET = new Ticket("High W",330);
+    public static final Ticket BURNLEY_TICKET = new Ticket("Burnley", 200);
+    public static final Ticket PADIHAM_TICKET = new Ticket("Padiham", 300);
+    public static final Ticket PRESTON_TICKET  = new Ticket("Preston", 330);
     
     private Ticket currentTicket;
     
-    private int price;
-    // The amount of money entered by a customer so far.
+    // The amount of money entered by a customer so far in pence.
     private int balance;
-    // The total amount of money collected by this machine.
-    private int total;
+    
+    // The totalCollected amount of money collected by this machine in pence.
+    private int totalCollected;
+    
+    private SimpleDateFormat formatter = new SimpleDateFormat("dd/MMM/yyyy");
+
 
     /**
-     * Create a machine that issues tickets of the given price.
+     * Create a machine that issues tickets for the maximum price
      */
-    public TicketMachine(int cost)
+    public TicketMachine()
     {
-        price = cost;
         balance = 0;
-        total = 0;
+        totalCollected = 0;
+
+        currentTicket = null;
     }
 
-    /**
-     * @Return The price of a ticket.
-     */
+
+    public void PrintDestinations()
+    {
+        printHeading();
+        System.out.println();
+
+        System.out.print(" Tickets to " + BURNLEY_TICKET.getDestination());
+        System.out.println(" cost " + BURNLEY_TICKET.getPrice());
+        
+        System.out.print(" Tickets to " + PADIHAM_TICKET.getDestination());
+        System.out.println(" cost " + PADIHAM_TICKET.getPrice());  
+        
+        System.out.print(" Tickets to " + PRESTON_TICKET.getDestination());
+        System.out.println(" cost " + PRESTON_TICKET.getPrice());        
+    }
+    
+    public void selectBurnleyTicket()
+    {
+       currentTicket = BURNLEY_TICKET; 
+    }
+    
+    public void selectPadihamTicket()
+    {
+       currentTicket = PADIHAM_TICKET; 
+    }
+    
+    public void selectPrestonTicket()
+    {
+       currentTicket = PRESTON_TICKET; 
+    }
+    
     public int getPrice()
     {
-        return price;
+        if(currentTicket != null)
+        {
+            return currentTicket.getPrice();
+        }
+        else
+        {
+            System.out.println("You have not chosen a destination!");
+            return 0;
+        }
     }
 
     /**
-     * Return The amount of money already inserted for the
+     * Return The amount of money in pence already inserted for the
      * next ticket.
      */
     public int getBalance()
@@ -52,20 +96,115 @@ public class TicketMachine extends Coin
     }
 
     /**
-     * Receive an amount of money from a customer.
-     * Check that the amount is sensible.
+     * Coin contains an enumeration containing only those
+     * coin values that are accepted.
      */
-    public void insertMoney(int amount)
+    public void insertCoin(Coin coin)
     {
-        if(amount > 0) {
-            balance = balance + amount;
-        }
-        else {
-            System.out.println("Use a positive amount rather than: " +
-                               amount);
+        updateBalance(coin.getValue());
+    }
+
+    /**
+     * This method accepts a simple interger.  
+     * However only coins of set values are
+     * accepted, they are 10, 20, 100 and 200 (pence).
+     */
+    public void insertCoin(int value)
+    {
+        switch(value)
+        {
+            case 10:  case 20: case 100: case 200: 
+            
+                updateBalance(value);
+                break;
+
+            default: 
+                System.out.println();
+                System.out.println("This " + value + " is not an acceptable coin!");
         }
     }
 
+    
+    /**
+     * Insert a ten pence coin
+     */
+    public void insert10Pence()
+    {
+            updateBalance(10);            
+    }
+    
+    /**
+     * Insert a twenty pence coin
+     */
+    public void insert20Pence()
+    {
+            updateBalance(20);            
+    }
+    
+    /**
+     * Insert a one pound coin
+     */
+    public void insert1Pound()
+    {
+            updateBalance(100);            
+    }
+
+    /**
+     * Insert a two pound coin
+     */
+    public void insert2Pound()
+    {
+        updateBalance(200);
+    }
+
+    /**
+     * Receive an amount of money in pence from a customer.
+     * Check that the amount is sensible.
+     */
+    public void insertMoney()
+    {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println();
+        System.out.print("Enter Ticket Price: >");
+
+        int amount = input.nextInt();
+
+        if(amount > 0) 
+        {
+            updateBalance(amount);
+        }
+        else 
+        {
+            System.out.println();
+            System.out.println("Please use a positive amount: " + amount);
+        }
+    }
+
+    private void printHeading()
+    {
+        System.out.println();
+        System.out.println(" ##############################");
+        System.out.println(" #      Peacock Trains");
+        System.out.println(" # Train Tickets - PAY HERE");
+        System.out.println(" ##############################");
+        System.out.println();
+    }
+
+    private void updateBalance(int amount)
+    {
+        balance = balance + amount;
+        
+        System.out.println();
+        System.out.println("Received " + amount + " pence");
+        printBalance();
+    }
+
+    public void printBalance()
+    {
+        System.out.println("Balance " + balance + " pence");
+    }
+    
     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
@@ -73,24 +212,32 @@ public class TicketMachine extends Coin
      */
     public void printTicket()
     {
-        if(balance >= price) {
-            // Simulate the printing of a ticket.
-            System.out.println("##################");
-            System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
-            System.out.println("##################");
+        int price = currentTicket.getPrice();
+        double pounds;
+        
+        String date = formatter.format(currentTicket.getDate());
+        String destination = currentTicket.getDestination();
+        
+        if(balance >= price) 
+        {
+            printHeading();
+
+            System.out.print("Your Train Ticket to ");
+            System.out.println(destination );
+            System.out.println("On Date: " + date);
+            System.out.println("Cost: " + price + " pence");
             System.out.println();
 
-            // Update the total collected with the price.
-            total = total + price;
+            // Update the totalCollected collected with the price.
+            totalCollected = totalCollected + price;
             // Reduce the balance by the prince.
             balance = balance - price;
         }
-        else {
+        else 
+        {
             System.out.println("You must insert at least: " +
-                               (price - balance) + " more cents.");
-                    
+                (price - balance) + " more pence.");
+
         }
     }
 
@@ -105,19 +252,4 @@ public class TicketMachine extends Coin
         balance = 0;
         return amountToRefund;
     }
-
-public TicketMachine()
-{
-    currentTicket=null;
-    balance = 0;
-    total = 0;
 }
-public void addAylesbury()
-{
-    currentTicket =AYLESBURY_TICKET;
-}
-
-}
-
-
-

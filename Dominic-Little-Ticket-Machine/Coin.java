@@ -1,29 +1,24 @@
 
 /**
- * Write a description of class Coin here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Dominic Little
+ * @version 10/11/2020
  */
-public class Coin
+public enum Coin
 {
-    public enum coin
+    P10 (10),
+    P20 (20),
+    P100 (100),
+    P200 (200);
+    
+    private final int value;
+    
+    private Coin(int value)
     {
-        P10 (10),
-        P20 (20),
-        P100 (100),
-        p200 (200);
-        
-        private final int value;
-        
-        private coin(int value)
-       {
-           this.value = value;
-       }
-       public int getvalue()
-       {
-           return value;
-        }
-
+        this.value = value;
     }
-} 
+    
+    public int getValue()
+    {
+        return value;
+    }
+ }

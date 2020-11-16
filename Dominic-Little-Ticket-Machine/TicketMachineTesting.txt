@@ -1,0 +1,60 @@
+TicketMachine ticketMa1 = new TicketMachine();
+ticketMa1.PrintDestinations();
+
+ ##############################
+ #      Peacock Trains
+ # Train Tickets - PAY HERE
+ ##############################
+
+
+ Tickets to Burnley cost 200
+ Tickets to Padiham cost 300
+ Tickets to Preston cost 330
+ticketMa1.selectBurnleyTicket();
+ticketMa1.selectPadihamTicket();
+ticketMa1.PrintDestinations();
+
+ ##############################
+ #      Peacock Trains
+ # Train Tickets - PAY HERE
+ ##############################
+
+
+ Tickets to Burnley cost 200
+ Tickets to Padiham cost 300
+ Tickets to Preston cost 330
+ticketMa1.getBalance()
+    returned int 0
+ticketMa1.insert20Pence();
+
+Received 20 pence
+Balance 20 pence
+ticketMa1.getBalance()
+    returned int 20
+ticketMa1.printTicket();
+You must insert at least: 280 more pence.
+ticketMa1.insert2Pound();
+
+Received 200 pence
+Balance 220 pence
+ticketMa1.insert2Pound();
+
+Received 200 pence
+Balance 420 pence
+ticketMa1.printTicket();
+
+ ##############################
+ #      Peacock Trains
+ # Train Tickets - PAY HERE
+ ##############################
+
+Your Train Ticket to Padiham
+On Date: 16/Nov/2020
+Cost: 300 pence
+
+ticketMa1.getBalance()
+    returned int 120
+ticketMa1.refundBalance()
+    returned int 120
+ticketMa1.getBalance()
+    returned int 0

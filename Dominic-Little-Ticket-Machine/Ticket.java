@@ -1,46 +1,52 @@
 import java.util.Date;
+import java.time.LocalDateTime;
+
 /**
  * Write a description of class Ticket here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
+
+    
+
 public class Ticket
 {
-    // instance variables - replace the example below with your own
-    private int price;
+private int price;
     private String destination;
     private Date currentDate = new Date();
-
+    private LocalDateTime date = LocalDateTime.now();
+    private Date today = new Date();
+    
     /**
      * Constructor for objects of class Ticket
      */
-    public Ticket(String destination, int price)
+    public Ticket( String destination, int price)
     {
         // initialise instance variables
-        this.destination = destination;
         this.price = price;
+        this.destination = destination;
     }
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Return the price of the ticket in pence
      */
-    public int sampleMethod(int y)
+    public int getPrice()
     {
-        // put your code here
         return price;
     }
     
-    public String findcurrentDestination()
+    /**
+     * Return the name of the destination
+     */
+    public String getDestination()
     {
         return destination;
     }
     
-    public Date findcurrentDate()
+    public Date getDate()
     {
-        return currentDate;
-    }   
+        return today;
+    }
+    
 }
-
