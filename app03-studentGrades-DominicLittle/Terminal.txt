@@ -1,0 +1,24 @@
+Student student1 = new Student("Dom", "1234");
+Course course1 = new Course("1234", "Games Dev");
+Module module1 = new Module("module1", "1");
+Module module2 = new Module("module2", "2");
+Module module3 = new Module("module 3", "3");
+Module module4 = new Module("module4", "4");
+course1.addModule(1, module1);
+course1.addModule(2, module2);
+course1.addModule(3, module3);
+course1.addModule(4, module4);
+student1.enrolOnCourse(course1);
+course1.print();
+Course 1234 - Games Dev
+module1.print();
+Module: 1 module1 Mark = -1
+module2.print();
+Module: 2 module2 Mark = -1
+module3.print();
+Module: 3 module 3 Mark = -1
+module4.print();
+Module: 4 module4 Mark = -1
+student1.print();
+Dom, student ID: 1234, credits: 0
+module1.awardMark(50);
