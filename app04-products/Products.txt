@@ -1,0 +1,137 @@
+StockManager stockMan1 = new StockManager();
+StockManager stockMan1 = new StockManager();
+StockDemo stockDem1 = new StockDemo(stockMan1);
+stockMan1.findProduct(1)
+    returned Object <object reference>
+stockMan1.printAllProducts();
+
+*******************************
+  Products Management System
+     by Dominic Little 
+*******************************
+
+100: iPhone 12 stock level: 0
+101: Ipad pro stock level: 0
+102: Apple Mac 21.5 Inches stock level: 0
+103: Gogle Pixel 4A stock level: 0
+104: Google Pixel 3 XL stock level: 0
+105: iPhone 11 stock level: 0
+106: PS5 stock level: 0
+107: Xbox series X stock level: 0
+108: Sony Xperia 5 stock level: 0
+109: Ipad stock level: 0
+
+Product product1 = new Product(1, "iPhone11");
+stockMan1.addProduct(product1);
+product1.increaseQuantity(2);
+stockMan1.printAllProducts();
+
+*******************************
+  Products Management System
+     by Dominic Little 
+*******************************
+
+100: iPhone 12 stock level: 0
+101: Ipad pro stock level: 0
+102: Apple Mac 21.5 Inches stock level: 0
+103: Gogle Pixel 4A stock level: 0
+104: Google Pixel 3 XL stock level: 0
+105: iPhone 11 stock level: 0
+106: PS5 stock level: 0
+107: Xbox series X stock level: 0
+108: Sony Xperia 5 stock level: 0
+109: Ipad stock level: 0
+1: iPhone11 stock level: 2
+
+Product product2 = new Product(2, "iPad Pro");
+stockMan1.addProduct(product2);
+product2.increaseQuantity(4);
+stockMan1.printAllProducts();
+
+*******************************
+  Products Management System
+     by Dominic Little 
+*******************************
+
+100: iPhone 12 stock level: 0
+101: Ipad pro stock level: 0
+102: Apple Mac 21.5 Inches stock level: 0
+103: Gogle Pixel 4A stock level: 0
+104: Google Pixel 3 XL stock level: 0
+105: iPhone 11 stock level: 0
+106: PS5 stock level: 0
+107: Xbox series X stock level: 0
+108: Sony Xperia 5 stock level: 0
+109: Ipad stock level: 0
+1: iPhone11 stock level: 2
+2: iPad Pro stock level: 4
+
+stockMan1.sellProduct(1, 1);
+Selling Product: Order Quantity = 1
+1: iPhone11 stock level: 2
+  1 items sold!
+
+stockMan1.printAllProducts();
+
+*******************************
+  Products Management System
+     by Dominic Little 
+*******************************
+
+100: iPhone 12 stock level: 0
+101: Ipad pro stock level: 0
+102: Apple Mac 21.5 Inches stock level: 0
+103: Gogle Pixel 4A stock level: 0
+104: Google Pixel 3 XL stock level: 0
+105: iPhone 11 stock level: 0
+106: PS5 stock level: 0
+107: Xbox series X stock level: 0
+108: Sony Xperia 5 stock level: 0
+109: Ipad stock level: 0
+1: iPhone11 stock level: 1
+2: iPad Pro stock level: 4
+
+stockMan1.renameProduct(2, "Ipad pro");
+2: iPad Pro stock level: 4
+***RENAMED***
+2: Ipad pro stock level: 4
+stockMan1.removeProduct(1);
+
+ Product ID 1 REMOVED!
+
+stockMan1.searchProducts("Ipad pro");
+
+Searching for Ipad pro
+
+101: Ipad pro stock level: 0
+2: Ipad pro stock level: 4
+
+There are 2 products containing Ipad pro in their name!
+
+stockMan1.restockLowProducts(20);
+ Printing all out of stock products
+
+100: iPhone 12 stock level: 0
+101: Ipad pro stock level: 0
+102: Apple Mac 21.5 Inches stock level: 0
+103: Gogle Pixel 4A stock level: 0
+104: Google Pixel 3 XL stock level: 0
+105: iPhone 11 stock level: 0
+106: PS5 stock level: 0
+107: Xbox series X stock level: 0
+108: Sony Xperia 5 stock level: 0
+109: Ipad stock level: 0
+2: Ipad pro stock level: 4
+
+There were 11 stock products with less than 20 items
+
+
+Re-Stocking to a minimum level of 20
+
+stockMan1.printLowStockProducts(2)
+ Printing all out of stock products
+
+
+There were 0 stock products with less than 2 items
+
+    returned Object <object reference>
