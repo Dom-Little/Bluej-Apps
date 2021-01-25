@@ -1,0 +1,199 @@
+
+ Please enter the order quantity > 
+1
+    1: Iphone11 stock level: 1
+    Re-stocking by 1
+
+
+1 of 1: Iphone11 stock level: 2 delivered!
+
+    ******************************
+     Stock Management Application 
+       App05: by Dominic Little
+    ******************************
+    1. Add Product
+    2. Deliver Product
+    3. Sell Product
+    4. Search for Product
+    5. Remove Product
+    6. Print Low Stock
+    7. Print All Products
+    8. Quit
+
+    Enter choice number > 
+1
+ Adding a new Product
+
+
+ Please enter the product ID number > 
+2
+
+ Please enter the product name > 
+Your input is blank
+
+ Please enter the product name > 
+Iphone 11+
+    2: Iphone 11+ stock level: 0
+    Re-stocking by 1
+
+
+2: Iphone 11+ stock level: 1 added!
+
+    ******************************
+     Stock Management Application 
+       App05: by Dominic Little
+    ******************************
+    1. Add Product
+    2. Deliver Product
+    3. Sell Product
+    4. Search for Product
+    5. Remove Product
+    6. Print Low Stock
+    7. Print All Products
+    8. Quit
+
+    Enter choice number > 
+3
+ Deliver an amount of an existing Product
+
+
+ Please enter the product ID number > 
+2
+
+    Please enter the order quantity > 
+1
+Sold 1 of 2:Iphone 11+ 0 orders not met!
+
+ Product ID 2 sold!
+
+
+    2: Iphone 11+ stock level: 0 1 sold!
+
+    ******************************
+     Stock Management Application 
+       App05: by Dominic Little
+    ******************************
+    1. Add Product
+    2. Deliver Product
+    3. Sell Product
+    4. Search for Product
+    5. Remove Product
+    6. Print Low Stock
+    7. Print All Products
+    8. Quit
+
+    Enter choice number > 
+4
+
+ Please enter search term > 
+Your input is blank
+
+ Please enter search term > 
+1
+ Printing products matching 1
+
+
+Searching for 1
+
+200: Iphone 12 stock level: 2
+201: Iphone 12+ stock level: 5
+202: Iphone 12 mini stock level: 5
+203: Iphone 11 stock level: 4
+204: Iphone 11+ stock level: 6
+205: Iphone 11 mini stock level: 10
+1: Iphone11 stock level: 2
+2: Iphone 11+ stock level: 0
+
+There are 8 products containing 1 in their name!
+
+    ******************************
+     Stock Management Application 
+       App05: by Dominic Little
+    ******************************
+    1. Add Product
+    2. Deliver Product
+    3. Sell Product
+    4. Search for Product
+    5. Remove Product
+    6. Print Low Stock
+    7. Print All Products
+    8. Quit
+
+    Enter choice number > 
+5
+ Removing an old Product
+
+
+ Please enter the product ID number > 
+1
+
+ Product ID 1 REMOVED!
+
+
+1: Iphone11 stock level: 2 removed!
+
+    ******************************
+     Stock Management Application 
+       App05: by Dominic Little
+    ******************************
+    1. Add Product
+    2. Deliver Product
+    3. Sell Product
+    4. Search for Product
+    5. Remove Product
+    6. Print Low Stock
+    7. Print All Products
+    8. Quit
+
+    Enter choice number > 
+6
+
+ Please enter the minimum stock level > 
+3
+ Printing Stock with levels lower than 3
+
+ Printing all out of stock products
+
+200: Iphone 12 stock level: 2
+2: Iphone 11+ stock level: 0
+
+There were 2 stock products with less than 3 items
+
+    ******************************
+     Stock Management Application 
+       App05: by Dominic Little
+    ******************************
+    1. Add Product
+    2. Deliver Product
+    3. Sell Product
+    4. Search for Product
+    5. Remove Product
+    6. Print Low Stock
+    7. Print All Products
+    8. Quit
+
+    Enter choice number > 
+7
+    200: Iphone 12 stock level: 2
+    201: Iphone 12+ stock level: 5
+    202: Iphone 12 mini stock level: 5
+    203: Iphone 11 stock level: 4
+    204: Iphone 11+ stock level: 6
+    205: Iphone 11 mini stock level: 10
+    2: Iphone 11+ stock level: 0
+
+    ******************************
+     Stock Management Application 
+       App05: by Dominic Little
+    ******************************
+    1. Add Product
+    2. Deliver Product
+    3. Sell Product
+    4. Search for Product
+    5. Remove Product
+    6. Print Low Stock
+    7. Print All Products
+    8. Quit
+
+    Enter choice number > 
+8

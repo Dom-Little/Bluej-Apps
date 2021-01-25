@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=StockDemo
+comment0.text=\r\n\ Demonstrate\ the\ StockManager\ and\ Product\ classes.\r\n\ The\ demonstration\ becomes\ properly\ functional\ as\r\n\ the\ StockManager\ class\ is\ completed.\r\n\ \r\n\ @author\ Dominic\ Little\r\n\ @version\ 1\r\n\r\n
+comment1.params=manager
+comment1.target=StockDemo(StockManager)
+comment1.text=\r\n\ Create\ a\ StockManager\ and\ populate\ it\ with\r\n\ 10\ sample\ products.\r\n
+comment2.params=
+comment2.target=void\ addTestData()
+comment3.params=
+comment3.target=void\ runDemo()
+comment4.params=
+comment4.target=void\ demoDeliverProducts()
+comment5.params=
+comment5.target=void\ demoSellProducts()
+comment5.text=\r\n\ Shows\ that\ the\ StockManager\ can\ sell\ all\r\n\ different\ quantities\ of\ all\ of\ the\ products\r\n
+numComments=6
